@@ -6,6 +6,6 @@ const repoName = "webLab-5";
 export default defineConfig({
   base: `/${repoName}/`,
   build: {
-    outDir: "docs" // так удобно публиковать на Pages без GitHub Actions
+    outDir: "dist" // так удобно публиковать на Pages без GitHub Actions
   }
 });
