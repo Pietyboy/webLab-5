@@ -1,7 +1,7 @@
 name: Deploy Vite site to Pages
 on:
   push:
-    branches: ["master"]
+    branches: ["preview-master"]
 permissions:
   contents: read
   pages: write
