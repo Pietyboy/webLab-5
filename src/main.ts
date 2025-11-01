@@ -1,16 +1,38 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal } from 'bootstrap';
 import { DateTime } from 'luxon';
 
-// Нужный формат: dd.LL.y HH:mm:ss
-const FORMAT = "dd.LL.y HH:mm:ss";
+const FORMAT = 'dd.LL.y HH:mm:ss';
 
-const el = document.getElementById("clock") as HTMLHeadingElement;
+const modalElement = document.getElementById('timeModal');
+const showTimeButton = document.getElementById('showTimeBtn');
+const timeDisplay = document.getElementById('timeDisplay');
 
-function tick() {
-  // Локальное время; если хотите конкретную зону, добавьте .setZone('Europe/Moscow') и т.п.
-  const now = DateTime.now();
-  el.textContent = now.toFormat(FORMAT);
+if (!modalElement || !showTimeButton || !timeDisplay) {
+  throw new Error('Не удалось инициализировать элементы интерфейса.');
 }
 
-// Первый рендер сразу, затем — каждую секунду
-tick();
-setInterval(tick, 1000);
+const modal = new Modal(modalElement);
+let timerId: number | null = null;
+
+const updateTime = () => {
+  const now = DateTime.now().setLocale('ru');
+  timeDisplay.textContent = now.toFormat(FORMAT);
+};
+
+showTimeButton.addEventListener('click', () => {
+  updateTime();
+  modal.show();
+});
+
+modalElement.addEventListener('show.bs.modal', () => {
+  updateTime();
+  timerId = window.setInterval(updateTime, 1000);
+});
+
+modalElement.addEventListener('hidden.bs.modal', () => {
+  if (timerId !== null) {
+    window.clearInterval(timerId);
+    timerId = null;
+  }
+});

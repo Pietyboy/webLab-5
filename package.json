@@ -15,10 +15,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "luxon": "^3.7.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.37.0",
+    "@types/bootstrap": "^5.2.10",
     "@types/luxon": "^3.7.1",
     "eslint": "^9.37.0",
     "eslint-plugin-react": "^7.37.5",
