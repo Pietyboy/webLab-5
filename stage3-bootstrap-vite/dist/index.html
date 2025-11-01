@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Этап 3 — Luxon + Bootstrap</title>
+    <script type="module" crossorigin src="/assets/index-BJohPJcJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C_1hatpR.css">
+  </head>
+  <body>
+    <div id="app" class="container-fluid min-vh-100 d-flex align-items-center">
+      <div class="row w-100 h-100 align-items-stretch">
+        <div class="col-12 col-lg-2 mb-3 mb-lg-0"></div>
+        <div class="col-12 col-lg-8 d-flex">
+          <button
+            id="showTimeBtn"
+            type="button"
+            class="btn btn-danger btn-lg w-100 h-100 d-flex align-items-center justify-content-center text-uppercase fw-semibold"
+          >
+            Показать время
+          </button>
+        </div>
+        <div class="col-12 col-lg-2 mt-3 mt-lg-0"></div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="timeModal"
+      tabindex="-1"
+      aria-labelledby="timeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="timeModalLabel">Даниил Лукинский</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Закрыть"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p id="timeDisplay" class="fs-4 mb-0 text-center">--.--.-- --:--:--</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Закрыть
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
